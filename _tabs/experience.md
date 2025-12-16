@@ -8,8 +8,6 @@ permalink: /experience/
 
 {% assign cv = site.data.cv %}
 
-## Experience
-
 {% for role in cv.experience %}
 <section class="post-preview position-relative overflow-hidden rounded mb-4">
   <div class="position-relative z-1 p-3 p-md-4">
