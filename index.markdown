@@ -16,8 +16,8 @@ permalink: /
 
 <div class="row g-3 my-4">
   <div class="col-12 col-lg-6">
-    <a class="post-preview position-relative overflow-hidden d-block p-3 rounded text-decoration-none" href="{{ '/experience/' | relative_url }}">
-      <div class="position-relative">
+    <a class="post-preview position-relative overflow-hidden d-block rounded text-decoration-none" href="{{ '/experience/' | relative_url }}">
+      <div class="position-relative z-1 p-3">
         <h3 class="h5 mb-2">Current role</h3>
         <p class="mb-1"><strong>{{ current.title }}</strong> @ {{ current.company }}</p>
         <p class="mb-0 text-muted">{{ current.start }} – {{ current.end }}</p>
@@ -26,8 +26,8 @@ permalink: /
   </div>
 
   <div class="col-12 col-lg-6">
-    <a class="post-preview position-relative overflow-hidden d-block p-3 rounded text-decoration-none" href="{{ '/about/' | relative_url }}">
-      <div class="position-relative">
+    <a class="post-preview position-relative overflow-hidden d-block rounded text-decoration-none" href="{{ '/about/' | relative_url }}">
+      <div class="position-relative z-1 p-3">
         <h3 class="h5 mb-2">Contact</h3>
         <p class="mb-1"><strong>Email:</strong> <span>{{ cv.contact.email }}</span></p>
         <p class="mb-0"><strong>Phone:</strong> <span>{{ cv.contact.phone }}</span></p>
@@ -39,8 +39,8 @@ permalink: /
 
 <div class="row g-3">
   <div class="col-12 col-md-6 col-xl-3">
-    <a class="post-preview position-relative overflow-hidden d-block p-3 rounded text-decoration-none h-100" href="{{ '/about/' | relative_url }}">
-      <div class="position-relative">
+    <a class="post-preview position-relative overflow-hidden d-block rounded text-decoration-none h-100" href="{{ '/about/' | relative_url }}">
+      <div class="position-relative z-1 p-3">
         <h3 class="h5 mb-2">About</h3>
         <p class="mb-0 text-muted">Background, location, and contact links.</p>
       </div>
@@ -48,8 +48,8 @@ permalink: /
   </div>
 
   <div class="col-12 col-md-6 col-xl-3">
-    <a class="post-preview position-relative overflow-hidden d-block p-3 rounded text-decoration-none h-100" href="{{ '/skills/' | relative_url }}">
-      <div class="position-relative">
+    <a class="post-preview position-relative overflow-hidden d-block rounded text-decoration-none h-100" href="{{ '/skills/' | relative_url }}">
+      <div class="position-relative z-1 p-3">
         <h3 class="h5 mb-2">Skills</h3>
         <p class="mb-0 text-muted">Core strengths across backend, cloud, and testing.</p>
       </div>
@@ -57,8 +57,8 @@ permalink: /
   </div>
 
   <div class="col-12 col-md-6 col-xl-3">
-    <a class="post-preview position-relative overflow-hidden d-block p-3 rounded text-decoration-none h-100" href="{{ '/experience/' | relative_url }}">
-      <div class="position-relative">
+    <a class="post-preview position-relative overflow-hidden d-block rounded text-decoration-none h-100" href="{{ '/experience/' | relative_url }}">
+      <div class="position-relative z-1 p-3">
         <h3 class="h5 mb-2">Experience</h3>
         <p class="mb-0 text-muted">Recent roles, impact, and tech stacks.</p>
       </div>
@@ -66,8 +66,8 @@ permalink: /
   </div>
 
   <div class="col-12 col-md-6 col-xl-3">
-    <a class="post-preview position-relative overflow-hidden d-block p-3 rounded text-decoration-none h-100" href="{{ '/education/' | relative_url }}">
-      <div class="position-relative">
+    <a class="post-preview position-relative overflow-hidden d-block rounded text-decoration-none h-100" href="{{ '/education/' | relative_url }}">
+      <div class="position-relative z-1 p-3">
         <h3 class="h5 mb-2">Education</h3>
         <p class="mb-0 text-muted">Degrees and academic focus.</p>
       </div>
