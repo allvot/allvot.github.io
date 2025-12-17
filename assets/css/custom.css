@@ -32,6 +32,15 @@
 
   /* Gradients */
   --aa-border-gradient: linear-gradient(135deg, var(--aa-cyan), var(--aa-purple), var(--aa-green));
+  /* 1px rule gradient (dark-to-transparent edges, used for HR/footer borders) */
+  --aa-rule-gradient: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--aa-cyan-rgb), 0.55),
+    rgba(var(--aa-purple-rgb), 0.50),
+    rgba(var(--aa-green-rgb), 0.45),
+    transparent
+  );
   --aa-glow-cyan: rgba(var(--aa-cyan-rgb), 0.22);
   --aa-glow-purple: rgba(var(--aa-purple-rgb), 0.22);
   --aa-glow-green: rgba(var(--aa-green-rgb), 0.18);
@@ -216,7 +225,25 @@ html[data-mode="light"] {
 hr {
   border: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(var(--aa-cyan-rgb), 0.55), rgba(var(--aa-purple-rgb), 0.50), rgba(var(--aa-green-rgb), 0.45), transparent);
+  background: var(--aa-rule-gradient);
+}
+
+/* Footer: replace Chirpy's solid top border with the neon gradient */
+#tail-wrapper > footer,
+footer[aria-label="Site Info"] {
+  position: relative;
+  border-top: 0 !important; /* override `border-top: 1px solid var(--main-border-color)` */
+}
+
+#tail-wrapper > footer::before,
+footer[aria-label="Site Info"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--aa-rule-gradient);
 }
 
 /* Prompts: neon left border */
