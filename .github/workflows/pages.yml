@@ -51,51 +51,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          set -x
-
-          ruby -v
-          bundle -v
-          bundle exec jekyll -v
-
-          # `configure-pages` may output a full URL (e.g. "https://user.github.io/repo")
-          # but Jekyll's flags are split:
-          # - `--url` must be an origin ("https://user.github.io")
-          # - `--baseurl` must be a path ("", "/repo")
-          RAW_BASEURL="${PAGES_BASE_URL:-}"
-          RAW_BASEPATH="${PAGES_BASE_PATH:-}"
-
-          ORIGIN=""
-          BASEURL="$RAW_BASEURL"
-          if [[ "$RAW_BASEURL" =~ ^(https?://[^/]+)(.*)$ ]]; then
-            ORIGIN="${BASH_REMATCH[1]}"
-            BASEURL="${BASH_REMATCH[2]}"
-          fi
-          # Fallback: some versions expose the path separately ("" or "/repo")
-          if [[ -z "$BASEURL" && -n "$RAW_BASEPATH" ]]; then
-            BASEURL="$RAW_BASEPATH"
-          fi
-
-          # Normalize:
-          # - empty or "/" => ""
-          # - ensure leading "/" for non-empty paths
-          BASEURL="${BASEURL%%/}"
-          if [[ "$BASEURL" == "" || "$BASEURL" == "/" ]]; then
-            BASEURL=""
-          elif [[ "$BASEURL" != /* ]]; then
-            BASEURL="/$BASEURL"
-          fi
-
-          echo "Pages base_url: ${RAW_BASEURL}"
-          echo "Pages base_path: ${RAW_BASEPATH}"
-          echo "Jekyll --url:   ${ORIGIN}"
-          echo "Jekyll --baseurl: ${BASEURL}"
-
           bundle exec jekyll clean
-          if [[ -n "$ORIGIN" ]]; then
-            bundle exec jekyll build --trace --destination "_site" --url "$ORIGIN" --baseurl "$BASEURL"
-          else
-            bundle exec jekyll build --trace --destination "_site" --baseurl "$BASEURL"
-          fi
+          bundle exec jekyll build --trace --destination "_site"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
