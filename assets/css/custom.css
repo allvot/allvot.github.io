@@ -1,0 +1,86 @@
+/* Custom site colors (non-destructive overrides)
+ *
+ * We only override CSS variables exposed by the Chirpy theme + Bootstrap variables.
+ * This keeps upgrades safe: if the theme changes its internal selectors, our overrides
+ * remain additive and easy to adjust.
+ */
+
+/* =========
+ * Palette
+ * ========= */
+
+:root {
+  /* Your brand accent (light mode) */
+  --aa-accent: #7c3aed; /* violet */
+  --aa-accent-rgb: 124, 58, 237;
+
+  /* Your brand accent (dark mode) */
+  --aa-accent-dark: #a78bfa;
+  --aa-accent-dark-rgb: 167, 139, 250;
+}
+
+/* ===========================
+ * Light mode (forced or auto)
+ * =========================== */
+
+/* Auto mode: no data-mode attribute */
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]) {
+    --link-color: var(--aa-accent);
+    --toc-highlight: var(--aa-accent);
+    --checkbox-checked-color: var(--aa-accent);
+    --btn-share-hover-color: var(--aa-accent);
+
+    /* Subtle UI accents */
+    --sidebar-hover-bg: rgba(var(--aa-accent-rgb), 0.08);
+    --topbar-bg: rgba(255, 255, 255, 0.78);
+
+    /* Bootstrap primary (buttons, badges, etc.) */
+    --bs-primary: var(--aa-accent);
+    --bs-primary-rgb: var(--aa-accent-rgb);
+  }
+}
+
+/* Forced light */
+html[data-mode="light"] {
+  --link-color: var(--aa-accent);
+  --toc-highlight: var(--aa-accent);
+  --checkbox-checked-color: var(--aa-accent);
+  --btn-share-hover-color: var(--aa-accent);
+
+  --sidebar-hover-bg: rgba(var(--aa-accent-rgb), 0.08);
+  --topbar-bg: rgba(255, 255, 255, 0.78);
+
+  --bs-primary: var(--aa-accent);
+  --bs-primary-rgb: var(--aa-accent-rgb);
+}
+
+/* ==========================
+ * Dark mode (forced or auto)
+ * ========================== */
+
+/* Auto mode: no data-mode attribute */
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) {
+    --link-color: var(--aa-accent-dark);
+    --toc-highlight: var(--aa-accent-dark);
+    --checkbox-checked-color: var(--aa-accent-dark);
+    --btn-share-hover-color: var(--aa-accent-dark);
+    --sidebar-hover-bg: rgba(var(--aa-accent-dark-rgb), 0.10);
+    --bs-primary: var(--aa-accent-dark);
+    --bs-primary-rgb: var(--aa-accent-dark-rgb);
+  }
+}
+
+/* Forced dark */
+html[data-mode="dark"] {
+  --link-color: var(--aa-accent-dark);
+  --toc-highlight: var(--aa-accent-dark);
+  --checkbox-checked-color: var(--aa-accent-dark);
+  --btn-share-hover-color: var(--aa-accent-dark);
+  --sidebar-hover-bg: rgba(var(--aa-accent-dark-rgb), 0.10);
+  --bs-primary: var(--aa-accent-dark);
+  --bs-primary-rgb: var(--aa-accent-dark-rgb);
+}
+
+
