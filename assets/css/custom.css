@@ -453,6 +453,14 @@ a:not(.btn):focus > code.highlighter-rouge {
   margin-top: 1.25rem;
 }
 
+/* Bootstrap's vertical gutters rely on `.row > * { margin-top: var(--bs-gutter-y); }`.
+ * Chirpy overrides some `.row` margins in its own CSS, and in some prod builds the
+ * vertical spacing can appear to collapse. This flex `row-gap` is a safe, scoped fallback.
+ */
+.aa-services .row.g-3 {
+  row-gap: 1rem;
+}
+
 .aa-services .aa-services-engines .post-tag i {
   opacity: 0.9;
 }
