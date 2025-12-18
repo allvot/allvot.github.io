@@ -249,6 +249,20 @@ html[data-mode="dark"] {
   --prompt-info-icon-color: var(--aa-cyan);
 }
 
+/* Ensure the main page surface is always the canonical background color.
+ * Chirpy doesn't set a background on `#main-wrapper` (it’s transparent), so depending on
+ * overlays and compositing, DevTools may show a slightly different computed color.
+ */
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) #main-wrapper {
+    background-color: var(--main-bg) !important;
+  }
+}
+
+html[data-mode="dark"] #main-wrapper {
+  background-color: var(--main-bg) !important;
+}
+
 /* Light mode: keep the palette, but reduce shadow intensity */
 @media (prefers-color-scheme: light) {
   html:not([data-mode]) {
