@@ -20,10 +20,8 @@ toc: true
 
 <div class="post-tags d-flex flex-wrap gap-2">
   {% for engine in services.ai_engines %}
-    <span class="post-tag" style="color: var(--text-color) !important;">
-      {% if engine.icon %}
-        <i class="{{ engine.icon }} fa-fw me-1" style="color: var(--text-color) !important;"></i>
-      {% endif %}
+    <span class="post-tag">
+      <i class="{{ engine.icon }} fa-fw me-1"></i>
       {{ engine.name }}
     </span>
   {% endfor %}
@@ -32,10 +30,8 @@ toc: true
 ### Programming Languages
 <div class="post-tags d-flex flex-wrap gap-2">
   {% for language in services.programming_languages %}
-    <span class="post-tag" style="color: var(--text-color) !important;">
-      {% if language.icon %}
-        <i class="{{ language.icon }} fa-fw me-1" style="color: var(--text-color) !important;"></i>
-      {% endif %}
+    <span class="post-tag">
+      <i class="{{ language.icon }} fa-fw me-1"></i>
       {{ language.name }}
     </span>
   {% endfor %}
@@ -45,10 +41,8 @@ toc: true
 
 <div class="post-tags d-flex flex-wrap gap-2">
   {% for framework in services.frameworks %}
-    <span class="post-tag" style="color: var(--text-color) !important;">
-      {% if framework.icon %}
-        <i class="{{ framework.icon }} fa-fw me-1" style="color: var(--text-color) !important;"></i>
-      {% endif %}
+    <span class="post-tag">
+      <i class="{{ framework.icon }} fa-fw me-1"></i>
       {{ framework.name }}
     </span>
   {% endfor %}
@@ -67,9 +61,7 @@ toc: true
         <header class="d-flex align-items-start justify-content-between gap-2">
           <div class="flex-grow-1">
             <h3 class="h6 mb-1">
-              {% if service.icon %}
-                <i class="{{ service.icon }} fa-fw me-2 text-muted"></i>
-              {% endif %}
+              <i class="{{ service.icon }} fa-fw me-2 text-muted"></i>
               {{ service.name }}
             </h3>
             <div class="text-muted mb-0">

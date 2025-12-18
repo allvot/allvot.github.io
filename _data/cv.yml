@@ -65,7 +65,7 @@ skills:
       - name: "AWS"
         years: 7
         description: "Building and operating services on AWS with secure IAM practices and observable deployments."
-        details: "S3, ECS, RDS, EC2, IAM, CloudWatch, Lambda"
+        details: "S3, ECS, RDS, EC2, IAM, Lambda, CloudWatch, Logs Insights"
         icon_class: "fab fa-aws"
       - name: "Terraform"
         description: "Infrastructure as Code for repeatable environments and safer change management."
