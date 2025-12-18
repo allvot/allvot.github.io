@@ -54,13 +54,15 @@
     {% for entry in site.data.contact %}
       {% case entry.type %}
         {% when 'github', 'twitter' %}
+          {% capture username_key %}{{ entry.type }}_username{% endcapture %}
+          {% assign username = site[entry.type].username | default: site[username_key] %}
           {%- capture url -%}
-            https://{{ entry.type }}.com/{{ site[entry.type].username }}
+            https://{{ entry.type }}.com/{{ username }}
           {%- endcapture -%}
         {% when 'email' %}
-          {% assign email = site.social.email | split: '@' %}
+          {% assign email_addr = site.social.email | default: site.email %}
           {%- capture url -%}
-            javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+            mailto:{{ email_addr }}
           {%- endcapture -%}
         {% when 'rss' %}
           {% assign url = '/feed.xml' | relative_url %}

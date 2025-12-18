@@ -1,0 +1,22 @@
+#
+# Sidebar footer social/contact icons.
+# Each entry is rendered by `_includes/sidebar.html`.
+#
+# - type: Special-cased types: github, twitter, email, rss, mastodon
+# - icon: Font Awesome class (e.g. "fab fa-github")
+# - url: Used for types not special-cased (e.g. linkedin)
+# - noblank: true to disable target="_blank" (good for internal links like RSS and email)
+#
+
+- type: email
+  icon: fas fa-envelope
+  noblank: true
+
+- type: github
+  icon: fab fa-github
+
+- type: linkedin
+  icon: fab fa-linkedin
+  url: https://www.linkedin.com/in/alvaro-alday-68075217b/
+
+
