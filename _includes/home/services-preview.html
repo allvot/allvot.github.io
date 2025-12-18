@@ -1,0 +1,64 @@
+{% assign services = site.data.services %}
+
+<section class="aa-home-section aa-services" aria-label="Services">
+  <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 mb-3">
+    <div class="flex-grow-1">
+      <h2 class="h4 mb-1">{{ services.title }}</h2>
+      {% if services.description %}
+        <p class="text-muted mb-0">{{ services.description }}</p>
+      {% endif %}
+    </div>
+    <div class="d-flex gap-2">
+        <a class="btn btn-primary btn-sm aa-btn-gradient" href="{{ '/services/' | relative_url }}">
+            Learn more
+        </a>
+    </div>
+  </div>
+
+  {% if services.ai_engines and services.ai_engines.size > 0 %}
+    <div class="post-tags d-flex flex-wrap gap-2 mb-3 aa-services-engines">
+      {% for engine in services.ai_engines %}
+        <span class="post-tag">
+          {% if engine.icon %}
+            <i class="{{ engine.icon }} fa-fw me-1"></i>
+          {% endif %}
+          {{ engine.name }}
+        </span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="row g-3">
+    {% assign preview_limit = 6 %}
+    {% for service in services.items limit: preview_limit %}
+      <div class="col-12 col-md-6 col-xl-4">
+        <section class="post-preview position-relative overflow-hidden rounded h-100 aa-services-card">
+          <div class="position-relative z-1 p-3">
+            <header class="d-flex align-items-start justify-content-between gap-2">
+              <div class="flex-grow-1">
+                <h3 class="h6 mb-1">
+                  {% if service.icon %}
+                    <i class="{{ service.icon }} fa-fw me-2 text-muted"></i>
+                  {% endif %}
+                  {{ service.name }}
+                </h3>
+                <div class="text-muted mb-0">
+                  {{ service.description }}
+                </div>
+              </div>
+            </header>
+          </div>
+        </section>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="aa-services-cta mt-3">
+    <a class="btn btn-primary btn-sm aa-btn-gradient" href="{{ '/services/' | relative_url }}">
+      Explore services
+    </a>
+    <span class="text-muted ms-2">Or email me to discuss a custom engagement.</span>
+  </div>
+</section>
+
+

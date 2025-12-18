@@ -17,8 +17,6 @@ permalink: /
 
 {{ cv.introduction }}
 
-{% assign current = cv.experience[0] %}
-
 {% assign contact_email = cv.contact.email %}
 {% assign contact_phone = cv.contact.phone %}
 {% assign contact_linkedin = cv.contact.linkedin %}
@@ -33,16 +31,7 @@ permalink: /
 > - <i class="fab fa-github fa-fw"></i> [GitHub]({{ contact_github }})
 {: .prompt-info }
 
-## Current role
-
-**{{ current.title }}** @ **{{ current.company }}**
-
-<span class="text-muted">
-  <i class="far fa-calendar-alt fa-fw"></i>
-  {{ current.start }} – {{ current.end }}
-</span>
-
-More details: [Experience]({{ '/experience/' | relative_url }})
+{% include home/services-preview.html %}
 
 ## Explore
 
@@ -50,3 +39,6 @@ More details: [Experience]({{ '/experience/' | relative_url }})
 - <i class="fas fa-briefcase fa-fw"></i> [Experience]({{ '/experience/' | relative_url }})
 - <i class="fas fa-graduation-cap fa-fw"></i> [Education]({{ '/education/' | relative_url }})
 - <i class="fas fa-handshake fa-fw"></i> [Services]({{ '/services/' | relative_url }})
+
+---
+

@@ -9,7 +9,7 @@ toc: true
 
 {% assign services = site.data.services %}
 
-## {{ services.title }}
+## {{ services.subtitle }}
 
 {{ services.description | markdownify }}
 
@@ -29,8 +29,35 @@ toc: true
   {% endfor %}
 </div>
 
+### Programming Languages
+<div class="post-tags d-flex flex-wrap gap-2">
+  {% for language in services.programming_languages %}
+    <span class="post-tag" style="color: var(--text-color) !important;">
+      {% if language.icon %}
+        <i class="{{ language.icon }} fa-fw me-1" style="color: var(--text-color) !important;"></i>
+      {% endif %}
+      {{ language.name }}
+    </span>
+  {% endfor %}
+</div>
+
+### Frameworks
+
+<div class="post-tags d-flex flex-wrap gap-2">
+  {% for framework in services.frameworks %}
+    <span class="post-tag" style="color: var(--text-color) !important;">
+      {% if framework.icon %}
+        <i class="{{ framework.icon }} fa-fw me-1" style="color: var(--text-color) !important;"></i>
+      {% endif %}
+      {{ framework.name }}
+    </span>
+  {% endfor %}
+</div>
+
 ---
 {% endif %}
+
+### Tailored Solutions
 
 <div class="row g-3">
 {% for service in services.items %}

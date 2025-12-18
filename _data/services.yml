@@ -1,6 +1,9 @@
 title: "Services"
-description: >-
-  I help teams build reliable web products and automate workflows with practical AI.
+subtitle: "An expert at your service"
+description: |-
+  Practical help to ship reliable web products and automation.
+
+  If you’re looking for a custom AI solution, a web application, or a production-ready chatbot, I can help. Tell me what you’re building and what “success” looks like, and I’ll propose the fastest path to measurable results.
 ai_engines:
   - name: "Gemini"
     icon: "fab fa-google"
@@ -8,6 +11,29 @@ ai_engines:
     icon: "fas fa-brain"
   - name: "Claude"
     icon: "fas fa-feather-alt"
+
+programming_languages:
+  - name: "Ruby"
+    icon: "fas fa-gem"
+  - name: "Python"
+    icon: "fab fa-python"
+  - name: "JavaScript"
+    icon: "fab fa-js"
+  - name: "C#"
+    icon: "fas fa-code"
+
+frameworks:
+  - name: "Ruby on Rails"
+    icon: "fas fa-gem"
+  - name: "Ruby on Jets"
+    icon: "fas fa-rocket"
+  - name: "FastAPI"
+    icon: "fas fa-bolt"
+  - name: "Node.js"
+    icon: "fab fa-node-js"
+  - name: "Laravel"
+    icon: "fab fa-laravel"
+
 items:
   - name: "Web Development"
     description: "Build or modernize web applications with a focus on performance, maintainability, and UX."
@@ -18,12 +44,12 @@ items:
   - name: "RPA with AI"
     description: "Combine RPA with AI for resilient, end-to-end automation across systems and processes."
     icon: "fas fa-cogs"
-  - name: "AI enhanced WebScraping"
+  - name: "AI-enhanced Web Scraping"
     description: "Extract and enrich web data with AI-assisted parsing, cleaning, and structured outputs."
     icon: "fas fa-search"
-  - name: "ChatBots"
+  - name: "Chatbots"
     description: "Build production-ready chatbots for support, internal operations, and guided customer journeys."
     icon: "fas fa-comments"
-  - name: "Custom Made AI solutions"
-    description: "Design and deliver custom AI solutions: pipelines, model integrations, and evaluation systems."
+  - name: "Custom AI Solutions"
+    description: "Design and deliver tailored AI solutions: pipelines, model integrations, and evaluation systems."
     icon: "fas fa-brain"

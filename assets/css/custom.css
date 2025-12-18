@@ -41,6 +41,15 @@
     rgba(var(--aa-green-rgb), 0.45),
     transparent
   );
+  /* 1px rule gradient, vertical (used for sidebar divider) */
+  --aa-rule-gradient-vertical: linear-gradient(
+    180deg,
+    transparent,
+    rgba(var(--aa-cyan-rgb), 0.55),
+    rgba(var(--aa-purple-rgb), 0.50),
+    rgba(var(--aa-green-rgb), 0.45),
+    transparent
+  );
   --aa-glow-cyan: rgba(var(--aa-cyan-rgb), 0.22);
   --aa-glow-purple: rgba(var(--aa-purple-rgb), 0.22);
   --aa-glow-green: rgba(var(--aa-green-rgb), 0.18);
@@ -99,6 +108,24 @@ html {
   /* Fonts (hacker / terminal vibe) */
   --aa-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --aa-font-mono-tight: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* Sidebar divider: Chirpy expects `--sidebar-border-color` to be a color (it’s also used
+ * for icon outline shadows), so we keep that var and add a gradient divider with a pseudo-element.
+ */
+#sidebar {
+  border-right: 0 !important;
+}
+
+#sidebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--aa-rule-gradient-vertical);
+  pointer-events: none;
 }
 
 /* Apply the font stack across the site */
@@ -284,10 +311,71 @@ blockquote[class*=" prompt-"] {
 footer a:hover,
 #topbar #breadcrumb a:hover,
 .post-meta a:not([class]):hover,
-.content a:not(.img-link):hover {
+.content a:not(.img-link):not(.btn):hover {
   color: var(--aa-green) !important;
   border-bottom: 1px solid var(--aa-green) !important;
   text-decoration: none;
+}
+
+/* Global link hover: ensure *all* links (not buttons) use the same neon-green hover
+ * text + underline across the theme (sidebar/topbar/etc.).
+ */
+a:not(.btn):hover,
+a:not(.btn):focus {
+  color: var(--aa-green) !important;
+  border-bottom-color: var(--aa-green) !important;
+  text-decoration-color: var(--aa-green) !important;
+}
+
+a:not(.btn):hover > code.highlighter-rouge,
+a:not(.btn):focus > code.highlighter-rouge {
+  color: var(--aa-green) !important;
+}
+
+/* ======================
+ * Home: Services preview
+ * ====================== */
+.aa-home-section {
+  margin-top: 1.25rem;
+}
+
+.aa-services .aa-services-engines .post-tag i {
+  opacity: 0.9;
+}
+
+.aa-services-card {
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.aa-services-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--aa-hover-shadow) !important;
+  filter: saturate(1.05);
+}
+
+.aa-services-cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Gradient button utility (use anywhere) */
+.aa-btn-gradient {
+  border: 1px solid transparent !important;
+  background:
+    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    var(--aa-border-gradient) border-box !important;
+}
+
+/* When used on Bootstrap primary buttons, ensure text stays readable in light mode too */
+.btn.aa-btn-gradient.btn-primary {
+  color: var(--text-color) !important;
+}
+
+.btn.aa-btn-gradient.btn-primary:hover,
+.btn.aa-btn-gradient.btn-primary:focus {
+  color: var(--heading-color) !important;
 }
 
 
