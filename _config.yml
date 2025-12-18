@@ -39,6 +39,16 @@ theme: jekyll-theme-chirpy
 plugins:
   - jekyll-feed
 
+# PWA / Service Worker
+#
+# The Chirpy PWA layer can aggressively cache HTML/CSS/JS in production.
+# If that cache becomes stale, clients may keep seeing old styles (e.g. missing Bootstrap gutters)
+# even after deploys. Disable PWA/SW to ensure production always fetches fresh assets.
+#
+# Once production is confirmed healthy, we can re-enable it with a safer caching strategy.
+pwa:
+  enabled: false
+
 # Chirpy "tabs" pages (files under `_tabs/`)
 collections:
   tabs:
