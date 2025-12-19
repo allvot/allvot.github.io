@@ -2,6 +2,8 @@
 layout: page
 title: Home
 permalink: /
+description: "Alvaro Alday — Senior Backend Engineer specializing in AI automation: RPA with AI, chatbots, AI-enhanced web scraping, and custom AI solutions."
+image: /assets/img/alvaro_alday.jpeg
 ---
 
 {% assign cv = site.data.cv %}

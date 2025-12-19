@@ -1,0 +1,72 @@
+{%- comment -%}
+  Extra metadata injected into <head>.
+  Safe for GitHub Pages (no unsupported plugins required).
+{%- endcomment -%}
+
+{%- assign base_url = site.url -%}
+{%- if base_url == nil or base_url == '' -%}
+  {%- assign base_url = site.github.url -%}
+{%- endif -%}
+
+{%- assign canonical_url = base_url | append: page.url -%}
+{%- assign person_name = site.author.name | default: site.title -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ base_url }}#website",
+      "url": "{{ base_url }}",
+      "name": "{{ site.title | escape }}",
+      "description": "{{ site.description | strip_newlines | escape }}",
+      "inLanguage": "{{ site.lang | default: 'en' }}",
+      "publisher": { "@id": "{{ base_url }}#person" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ canonical_url }}#webpage",
+      "url": "{{ canonical_url }}",
+      "name": "{{ page.title | default: site.title | escape }}",
+      "isPartOf": { "@id": "{{ base_url }}#website" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ base_url }}#person",
+      "name": "{{ person_name | escape }}",
+      "alternateName": [
+        "Alvaro Alday",
+        "Álvaro Alday"
+      ],
+      "url": "{{ base_url }}",
+      "image": "{{ base_url }}{{ site.social_preview_image | default: site.logo }}",
+      "jobTitle": "{{ site.tagline | escape }}",
+      "email": "mailto:{{ site.email | escape }}",
+      "sameAs": {{ site.social.links | default: empty | jsonify }},
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Monterrey",
+        "addressRegion": "Nuevo León",
+        "addressCountry": "MX"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "{{ base_url }}#service",
+      "name": "{{ person_name | escape }} — AI Automation",
+      "url": "{{ base_url }}",
+      "image": "{{ base_url }}{{ site.social_preview_image | default: site.logo }}",
+      "provider": { "@id": "{{ base_url }}#person" },
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "AI automation",
+        "RPA with AI",
+        "Chatbots",
+        "AI-enhanced web scraping",
+        "Custom AI solutions"
+      ]
+    }
+  ]
+}
+</script>

@@ -24,9 +24,22 @@ email: all.day.m35@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   I'm an experienced senior backend engineer and code enthusiast with great interest in beautifully crafted code and high performance solutions.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "allvot.github.io"
 twitter_username: all_day_m
 github_username:  allvot
+lang: en
+timezone: America/Monterrey
+
+# jekyll-seo-tag (supported by GitHub Pages)
+logo: /assets/img/alvaro_alday.jpeg
+author:
+  name: Alvaro Alday
+  email: all.day.m35@gmail.com
+social:
+  name: Alvaro Alday
+  links:
+    - https://www.linkedin.com/in/alvaro-alday-68075217b/
+    - https://github.com/allvot
 
 # Chirpy profile image (shows in the left sidebar)
 avatar: /assets/img/alvaro_alday.jpeg
@@ -38,6 +51,8 @@ social_preview_image: /assets/img/alvaro_alday.jpeg
 theme: jekyll-theme-chirpy
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # PWA / Service Worker
 #
@@ -61,6 +76,10 @@ defaults:
       type: tabs
     values:
       layout: page
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/alvaro_alday.jpeg
 
 # Exclude from processing.
 # The following items will not be processed, by default.

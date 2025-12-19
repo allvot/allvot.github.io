@@ -5,6 +5,8 @@ layout: page
 title: Services
 permalink: /services/
 toc: true
+description: "AI automation services by Alvaro Alday: RPA with AI, chatbots, AI-enhanced web scraping, and custom AI solutions."
+image: /assets/img/alvaro_alday.jpeg
 ---
 
 {% assign services = site.data.services %}

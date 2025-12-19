@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /robots.txt
+---
+User-agent: *
+Allow: /
+
+{% assign base_url = site.url %}
+{% if base_url == nil or base_url == '' %}
+  {% assign base_url = site.github.url %}
+{% endif %}
+Sitemap: {{ base_url }}{{ '/sitemap.xml' | relative_url }}
