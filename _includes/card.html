@@ -1,0 +1,20 @@
+{%- assign cols = include.cols | default: 4 -%}
+{%- assign icon_color = include.icon_color | default: 'text-muted' -%}
+<div class="col-12 col-lg-{{ cols }}">
+  <section class="post-preview position-relative overflow-hidden rounded h-100">
+    <div class="position-relative z-1 p-3">
+      <header class="d-flex align-items-start justify-content-between gap-2">
+        <div class="flex-grow-1">
+          <h4 class="h6 mb-1">
+            {%- if include.icon %}<i class="{{ include.icon }} fa-fw me-2 {{ icon_color }}"></i>{% endif -%}
+            {{ include.title }}
+            {%- if include.tag %} <span class="post-tag">{{ include.tag }}</span>{%- endif -%}
+          </h4>
+          {%- if include.content -%}
+          <div class="mb-0 text-muted">{{ include.content | markdownify }}</div>
+          {%- endif -%}
+        </div>
+      </header>
+    </div>
+  </section>
+</div>

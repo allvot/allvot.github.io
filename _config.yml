@@ -51,7 +51,6 @@ social_preview_image: /assets/img/alvaro_alday.jpeg
 # Build settings
 theme: jekyll-theme-chirpy
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 
@@ -81,6 +80,33 @@ defaults:
       path: ""
     values:
       image: /assets/img/alvaro_alday.jpeg
+
+# Kramdown + Rouge syntax highlighter settings.
+#
+# Chirpy strips the `<pre class="highlight">` wrapper from Rouge output (a workaround
+# for a jekyll-compress-html bug). Without line numbers, that leaves raw `<code>` with
+# no `<pre>` — which the compress layout collapses, turning multi-line code blocks
+# into single lines. Enabling `block.line_numbers` makes Rouge emit a table structure
+# with `<pre>` cells that compress-html properly protects.
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
 
 # Exclude from processing.
 # The following items will not be processed, by default.
