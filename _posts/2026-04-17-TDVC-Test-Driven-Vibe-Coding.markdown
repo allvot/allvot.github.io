@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "VDD Vibes Driven Development"
+title:  "TDVC Test Driven Vibe Coding"
 date:   2026-04-17 15:36:29 +0000
 categories: ai code software engineering vibe coding ruby tdd bdd
 toc: true
@@ -315,14 +315,14 @@ This cycle has made some systems ultra-reliable, but some developers super tired
 >
 > *said the angry developer to his manager.*
 
-## <i class="fas fa-wand-magic-sparkles fa-fw me-2 text-muted"></i>Vibe Driven Development
+## <i class="fas fa-wand-magic-sparkles fa-fw me-2 text-muted"></i>Test Driven Vibe Coding
 
 With the advent of AI, you don't need to write every test and handle it yourself every time. When you create a workflow where you take advantage of AI to write your tests, you're making sure it's able to write tests that matter, and code that really delivers. Once you hand an AI a failing test, you're giving it a piece of *concrete, verifiable evidence* of whether the code currently works and whether the requirements are met, all before a single line of production code is written. The AI can't just hallucinate a plausible-looking solution and call it a day. It has to make the test pass. And once the test is green, you have *proof* that the code does what it's supposed to do. No more guessing. No more blind trust.
 
 > Just **vibes, backed by tests**.
 {: .prompt-tip }
 
-### <i class="fas fa-bolt fa-fw me-2 text-muted"></i>The same feature, with VDD
+### <i class="fas fa-bolt fa-fw me-2 text-muted"></i>The same feature, with TDVC
 
 Now hand the *same* requirements to the `tdd-orchestrator` agent with one prompt:
 
@@ -353,9 +353,9 @@ Here's what actually happens when you run that:
 > **Total wall-clock time:** ~2 minutes of agent runtime, plus ~30 seconds of you reviewing the diff and the `rspec` output. Same suite, same production code, same discipline, just without the typing.
 {: .prompt-tip }
 
-Yes, the AI is faster, but that's not really the win here. What actually matters is that every line of production code in the final commit is backed by a failing test *the AI couldn't peek at while writing*. That's the verifiable evidence VDD is built on.
+Yes, the AI is faster, but that's not really the win here. What actually matters is that every line of production code in the final commit is backed by a failing test *the AI couldn't peek at while writing*. That's the verifiable evidence TDVC is built on.
 
-### <i class="fas fa-list-check fa-fw me-2 text-muted"></i>Layering BDD edge cases with VDD
+### <i class="fas fa-list-check fa-fw me-2 text-muted"></i>Layering BDD edge cases with TDVC
 
 Once the happy path is in place, the same orchestrator can pile on edge-case scenarios in a clean BDD style. Different prompt, same agent:
 
@@ -384,7 +384,7 @@ The agent writes each scenario test-first, watches it fail for the right reason,
 > This setup is built for **[Claude Code](https://docs.claude.com/en/docs/claude-code/overview)**. Though similar setups can be achieved for other tools I want to focus on this one.
 {: .prompt-info }
 
-I drive VDD day-to-day with three agents. One plans and delegates; the other two are focused specialists. Each lives as a single markdown file under `~/.claude/agents/`.
+I drive TDVC day-to-day with three agents. One plans and delegates; the other two are focused specialists. Each lives as a single markdown file under `~/.claude/agents/`.
 
 <div class="row g-3">
   {% include card.html icon="fas fa-sitemap" tag="opus"   title="tdd-orchestrator"     content="The technical lead. Takes an ambiguous request, writes BDD scenarios in Given-When-Then, designs the component breakdown, then dispatches atomic, test-first sub-tasks to the specialists below. It's the only agent I usually talk to directly." %}
